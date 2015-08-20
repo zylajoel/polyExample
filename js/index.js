@@ -17,7 +17,7 @@ $(function(){
           tileLayer: true,
           gridLayer: true
         });
-    
+
         // add some markers
         L.marker([37.9, -77], {
             icon: L.mapbox.marker.icon({
@@ -67,8 +67,32 @@ $(function(){
         }).addTo(map);
 
 
+        // draw a line HELP
+        var thePolyline = L.polyline([[102.0, 0.5], [95.0, 10], [10.9, -50]], {
+            color: 'red'
+        });
+        thePolyline.addTo(map);
 
 
+        // draw a line HELP
+        var pointA = new L.LatLng(28.635308, 77.22496);
+        var pointB = new L.LatLng(28.984461, 77.70641);
+        var pointList = [pointA, pointB];
+
+        var firstpolyline = new L.Polyline(pointList, {
+            color: 'red',
+            weight: 3,
+            opacity: 0.5,
+            smoothFactor: 1
+
+        });
+        firstpolyline.addTo(map);
+
+        var circle = L.circle([51.508, -0.11], 500, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map);
     }
 
     pjaxPageLoad();
